@@ -12,8 +12,6 @@ export const App: React.FC = () => {
   const startIndex = (currentPage - 1) * perPage;
   const endIndex = currentPage * perPage;
 
-
-
   return (
     <div className="container">
       <h1>Items with Pagination</h1>
@@ -29,12 +27,11 @@ export const App: React.FC = () => {
             data-cy="perPageSelector"
             id="perPageSelector"
             className="form-control"
-            onChange={(e) => {
-              setPerPage(Number(e.target.value))
-              setCurrentPage(1)
-            }
-            }
-            >
+            onChange={e => {
+              setPerPage(Number(e.target.value));
+              setCurrentPage(1);
+            }}
+          >
             <option value="3">3</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -50,13 +47,13 @@ export const App: React.FC = () => {
         total={42}
         perPage={perPage}
         currentPage={currentPage}
-        onPageChange={(page) => setCurrentPage(page)}
+        onPageChange={page => setCurrentPage(page)}
       />
       <ul>
         {items.slice(startIndex, endIndex).map(item => (
-          <li key={item}
-          data-cy="item"
-          >{item}</li>
+          <li key={item} data-cy="item">
+            {item}
+          </li>
         ))}
       </ul>
     </div>
