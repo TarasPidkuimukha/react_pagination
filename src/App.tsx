@@ -18,7 +18,7 @@ export const App: React.FC = () => {
       <h1>Items with Pagination</h1>
 
       <p className="lead" data-cy="info">
-        {`Page ${currentPage} (items ${(currentPage - 1) * perPage + 1} - ${Math.min(currentPage * perPage, total)} of total)`}
+        {`Page ${currentPage} (items ${(currentPage - 1) * perPage + 1} - ${Math.min(currentPage * perPage, total)} of ${total})`}
       </p>
 
       <div className="form-group row">

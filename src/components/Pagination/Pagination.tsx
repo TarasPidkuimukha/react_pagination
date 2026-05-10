@@ -35,7 +35,9 @@ export const Pagination: React.FC<PaginationProps> = ({
                 onPageChange(currentPage - 1);
               }
             }}
-          >«</a>
+          >
+            «
+          </a>
         </li>
         {pageNumber.map(page => (
           <li
