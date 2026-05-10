@@ -11,7 +11,7 @@ interface PaginationProps {
 export const Pagination: React.FC<PaginationProps> = ({
   total,
   perPage,
-  currentPage,
+  currentPage = 1,
   onPageChange,
 }) => {
   const pageNumber = [];
@@ -19,10 +19,6 @@ export const Pagination: React.FC<PaginationProps> = ({
   for (let i = 1; i <= Math.ceil(total / perPage); i++) {
     pageNumber.push(i);
   }
-
-
-
-
 
   return (
     <div>
@@ -39,7 +35,7 @@ export const Pagination: React.FC<PaginationProps> = ({
                 onPageChange(currentPage - 1);
               }
             }}
-          ></a>
+          >«</a>
         </li>
         {pageNumber.map(page => (
           <li
