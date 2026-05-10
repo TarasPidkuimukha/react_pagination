@@ -20,6 +20,10 @@ export const Pagination: React.FC<PaginationProps> = ({
     pageNumber.push(i);
   }
 
+
+
+
+
   return (
     <div>
       <ul className="pagination">
@@ -48,12 +52,10 @@ export const Pagination: React.FC<PaginationProps> = ({
               data-cy="pageLink"
               href={`#${page}`}
               onClick={() => {
-
                 if (page !== currentPage) {
-
-                  onPageChange(page)}
+                  onPageChange(page);
                 }
-              }
+              }}
             >
               {page}
             </a>
